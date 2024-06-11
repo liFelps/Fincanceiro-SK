@@ -1,0 +1,6 @@
+SELECT CUS.CODCENCUS AS "Centro de Resultado_ID",
+       CUS.DESCRCENCUS AS "Centro de Resultado",
+       COALESCE(PAI.CODCENCUS,-999) AS "Centro de Resultado Pai_ID",
+       COALESCE(PAI.DESCRCENCUS,'Sem CR')AS "Centro de Resultado Pai"
+FROM TSICUS CUS
+LEFT JOIN TSICUS PAI ON PAI.CODCENCUS = CUS.CODCENCUSPAI
